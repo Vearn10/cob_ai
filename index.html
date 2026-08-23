@@ -72,24 +72,16 @@
 
         <!-- Custom Avatar/Logo Section -->
         <div class="flex items-center gap-4">
-            <div class="relative group cursor-pointer" onclick="document.getElementById('logoUploader').click()">
+            <div class="relative shrink-0">
                 <div
-                    class="absolute -inset-1 bg-cyan-500/20 rounded-full blur sm:group-hover:bg-cyan-500/40 transition">
-                </div>
-                <div
-                    class="relative w-12 h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
-                    <img id="customLogo" src="" alt="Core" class="w-full h-full object-cover hidden">
+                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
+                    <img src="image.png" id="customLogo" src="" alt="Core" class="w-full h-full object-cover hidden">
                     <div id="defaultArc"
-                        class="w-8 h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
-                        <div class="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]"></div>
+                        class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
+                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]"></div>
                     </div>
                 </div>
-                <div
-                    class="absolute -bottom-1 -right-1 bg-cyan-950 border border-cyan-400 text-[9px] font-hud px-1 rounded text-cyan-300">
-                    EDIT
-                </div>
             </div>
-            <input type="file" id="logoUploader" accept="image/*" class="hidden" onchange="loadCustomLogo(event)">
 
             <div>
                 <h1
