@@ -71,7 +71,8 @@
             <div class="relative shrink-0">
                 <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
                     <!-- Static Logo Image Tag (Set your image path in 'src') -->
-                    <img scr="image.png" id="customLogo" src="logo.png" alt="Core" class="w-full h-full object-cover hidden" onerror="this.classList.add('hidden'); document.getElementById('defaultArc').classList.remove('hidden');" onload="this.classList.remove('hidden'); document.getElementById('defaultArc').classList.add('hidden');">
+                   <!-- Corrected Tag -->
+<img src="image.png" id="customLogo" alt="Core" class="w-full h-full object-cover hidden" ...>
                     
                     <!-- Fallback Static Arc Reactor -->
                     <div id="defaultArc" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
