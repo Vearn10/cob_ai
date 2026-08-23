@@ -64,17 +64,17 @@
 <body class="bg-slate-950 text-cyan-100 h-full flex flex-col font-sans antialiased scanline selection:bg-cyan-500/30 selection:text-cyan-200">
 
     <!-- Top HUD Header -->
-   <header
-        class="h-20 border-b border-cyan-500/30 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50 flex items-center justify-between px-4 sm:px-8">
+    <header class="py-3 px-4 sm:px-8 border-b border-cyan-500/30 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3">
 
-        <!-- Custom Avatar/Logo Section -->
-        <div class="flex items-center gap-4">
+        <!-- Static Avatar / Logo Section -->
+        <div class="flex items-center gap-3">
             <div class="relative shrink-0">
-                <div
-                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
-                    <img src="image.png" id="customLogo" src="" alt="Core" class="w-full h-full object-cover hidden">
-                    <div id="defaultArc"
-                        class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
+                    <!-- Static Logo Image Tag (Set your image path in 'src') -->
+                    <img id="customLogo" src="logo.png" alt="Core" class="w-full h-full object-cover hidden" onerror="this.classList.add('hidden'); document.getElementById('defaultArc').classList.remove('hidden');" onload="this.classList.remove('hidden'); document.getElementById('defaultArc').classList.add('hidden');">
+                    
+                    <!-- Fallback Static Arc Reactor -->
+                    <div id="defaultArc" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
                         <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]"></div>
                     </div>
                 </div>
