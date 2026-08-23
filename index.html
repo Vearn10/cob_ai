@@ -8,9 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -63,31 +61,29 @@
     </style>
 </head>
 
-<body
-    class="bg-slate-950 text-cyan-100 h-full flex flex-col font-sans antialiased scanline selection:bg-cyan-500/30 selection:text-cyan-200">
+<body class="bg-slate-950 text-cyan-100 h-full flex flex-col font-sans antialiased scanline selection:bg-cyan-500/30 selection:text-cyan-200">
 
     <!-- Top HUD Header -->
-    <header
-        class="py-3 px-4 sm:px-8 border-b border-cyan-500/30 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3">
+    <header class="py-3 px-4 sm:px-8 border-b border-cyan-500/30 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3">
 
-        <!-- Static Avatar Section -->
+        <!-- Static Avatar / Logo Section -->
         <div class="flex items-center gap-3">
             <div class="relative shrink-0">
-                <div
-                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
-                    <div id="defaultArc"
-                        class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cyan-400/60 bg-slate-900 flex items-center justify-center overflow-hidden shadow-lg shadow-cyan-500/20">
+                    <!-- Static Logo Image Tag (Set your image path in 'src') -->
+                    <img scr="image.png" id="customLogo" src="logo.png" alt="Core" class="w-full h-full object-cover hidden" onerror="this.classList.add('hidden'); document.getElementById('defaultArc').classList.remove('hidden');" onload="this.classList.remove('hidden'); document.getElementById('defaultArc').classList.add('hidden');">
+                    
+                    <!-- Fallback Static Arc Reactor -->
+                    <div id="defaultArc" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-dashed border-cyan-400 arc-reactor-spin flex items-center justify-center">
                         <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]"></div>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h1
-                    class="text-base sm:text-lg font-hud font-extrabold tracking-wider text-cyan-400 hud-glow-text flex items-center gap-1.5 sm:gap-2">
+                <h1 class="text-base sm:text-lg font-hud font-extrabold tracking-wider text-cyan-400 hud-glow-text flex items-center gap-1.5 sm:gap-2">
                     R.Y.E.
-                    <span
-                        class="inline-flex items-center px-1 py-0.5 rounded text-[8px] sm:text-[9px] font-hud bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 tracking-normal">
+                    <span class="inline-flex items-center px-1 py-0.5 rounded text-[8px] sm:text-[9px] font-hud bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 tracking-normal">
                         RYE XVIV
                     </span>
                 </h1>
@@ -115,9 +111,8 @@
                 </div>
             </div>
 
-            <!-- Static System Status Badge (replaces API key input) -->
-            <div
-                class="bg-cyan-950/60 border border-cyan-500/40 px-2.5 py-1.5 sm:py-2 rounded flex items-center gap-1.5 shrink-0">
+            <!-- Static System Status Badge -->
+            <div class="bg-cyan-950/60 border border-cyan-500/40 px-2.5 py-1.5 sm:py-2 rounded flex items-center gap-1.5 shrink-0">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
                 <span class="text-[9px] sm:text-[10px] font-hud text-cyan-300 tracking-wider">KEY AUTHENTICATED</span>
             </div>
@@ -126,21 +121,17 @@
 
     <!-- Main Workspace / Chat Console -->
     <main class="flex-1 overflow-hidden relative flex flex-col max-w-5xl w-full mx-auto p-2 sm:p-4">
-        <div id="chatLog"
-            class="flex-1 overflow-y-auto p-2 sm:p-4 space-y-4 sm:space-y-6 scrollbar-thin scrollbar-thumb-cyan-900">
+        <div id="chatLog" class="flex-1 overflow-y-auto p-2 sm:p-4 space-y-4 sm:space-y-6 scrollbar-thin scrollbar-thumb-cyan-900">
 
             <!-- System Welcome Module -->
-            <div
-                class="hud-border bg-slate-900/40 rounded-lg p-3 sm:p-4 flex gap-3 sm:gap-4 items-start backdrop-blur-md">
+            <div class="hud-border bg-slate-900/40 rounded-lg p-3 sm:p-4 flex gap-3 sm:gap-4 items-start backdrop-blur-md">
                 <div class="p-1.5 sm:p-2 bg-cyan-500/10 text-cyan-400 rounded border border-cyan-500/30 shrink-0">
                     <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
                 <div class="space-y-1">
-                    <h2 class="font-hud text-xs sm:text-sm font-bold text-cyan-300 tracking-wider">R.Y.E. VOICE
-                        SYNTHESIS ACTIVE</h2>
+                    <h2 class="font-hud text-xs sm:text-sm font-bold text-cyan-300 tracking-wider">R.Y.E. VOICE SYNTHESIS ACTIVE</h2>
                     <p class="text-[11px] sm:text-xs text-cyan-200/70 leading-relaxed font-sans">
                         Greetings, Boss. Hardcoded credentials locked in. Speech engine running at 1.25x speed.
                     </p>
@@ -160,8 +151,7 @@
                     class="absolute right-1 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-hud font-bold px-3 sm:px-4 py-1.5 sm:py-1.5 rounded text-[10px] sm:text-xs transition shadow-[0_0_10px_rgba(0,240,255,0.4)] flex items-center gap-1">
                     <span>EXECUTE</span>
                     <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </button>
             </div>
@@ -170,19 +160,15 @@
             <div class="flex items-center gap-2 sm:gap-3 pt-1 overflow-x-auto pb-1 sm:pb-0">
                 <button onclick="generatePicture()"
                     class="bg-slate-900 hover:bg-cyan-950 text-cyan-400 border border-cyan-500/40 px-2.5 sm:px-3 py-1.5 rounded text-[10px] sm:text-xs font-hud font-semibold flex items-center gap-1.5 transition shadow-sm shrink-0">
-                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                        </path>
+                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
                     <span>RENDER VISUAL</span>
                 </button>
                 <button onclick="insertSample('What is the 4th letter in the alphabet?')"
                     class="bg-slate-900 hover:bg-slate-800 text-cyan-500/80 hover:text-cyan-300 border border-slate-800 px-2.5 sm:px-3 py-1.5 rounded text-[10px] sm:text-xs font-hud transition flex items-center gap-1 shrink-0">
                     <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                     <span>DIAGNOSTIC TEST</span>
                 </button>
